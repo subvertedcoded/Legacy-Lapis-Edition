@@ -38,6 +38,7 @@ private:
 	int dropSpamTickCount;
 
 	bool m_bHasClientTickedOnce;
+	unsigned char m_logSmallId;
 
 public:
 	PlayerConnection(MinecraftServer *server, Connection *connection, shared_ptr<ServerPlayer> player);
@@ -46,6 +47,10 @@ public:
     void disconnect(DisconnectPacket::eDisconnectReason reason);
 
 private:
+	/**
+	 * Returns the stable network smallId used by dedicated-server logging and refreshes it from the live socket when possible
+	 */
+	unsigned char getLogSmallId();
 	double xLastOk, yLastOk, zLastOk;
     bool synched;
 
