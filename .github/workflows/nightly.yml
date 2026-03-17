@@ -49,7 +49,7 @@ jobs:
         buildPresetAdditionalArgs: "['--target', 'Minecraft.Client']"
 
     - name: Zip Build
-      run: 7z a -r LCE${{ matrix.platform }}.zip ./build/${{ env.MATRIX_PLATFORM }}/Minecraft.Client/Release/* -x!*.ipdb -x!*.iobj
+      run: 7z a -r LCE${{ matrix.platform }}.zip ./build/${{ env.MATRIX_PLATFORM }}/Minecraft.Client/Release/* "-x!*.ipdb" "-x!*.iobj"
 
     - name: Stage artifacts
       run: |

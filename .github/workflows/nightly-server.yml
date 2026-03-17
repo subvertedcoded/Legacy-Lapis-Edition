@@ -50,7 +50,7 @@ jobs:
         buildPresetAdditionalArgs: "['--target', 'Minecraft.Server']"
 
     - name: Zip Build
-      run: 7z a -r LCEServer${{ matrix.platform }}.zip ./build/${{ env.MATRIX_PLATFORM }}/Minecraft.Server/Release/* -x!*.ipdb -x!*.iobj
+      run: 7z a -r LCEServer${{ matrix.platform }}.zip ./build/${{ env.MATRIX_PLATFORM }}/Minecraft.Server/Release/* "-x!*.ipdb" "-x!*.iobj"
 
     - name: Stage artifacts
       run: |
@@ -93,7 +93,7 @@ jobs:
         files: |
           artifacts/*
 
-  docker-publish:
+  docker:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
     needs: build
@@ -157,7 +157,7 @@ jobs:
           MC_RUNTIME_DIR=runtime
 
   cleanup:
-    needs: [build, release]
+    needs: [build, release, docker]
     if: always()
     runs-on: ubuntu-latest
     steps:
