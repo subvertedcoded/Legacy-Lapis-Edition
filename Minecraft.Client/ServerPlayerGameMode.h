@@ -45,7 +45,7 @@ public:
 
     void tick();
     void startDestroyBlock(int x, int y, int z, int face);
-    void stopDestroyBlock(int x, int y, int z);
+    bool stopDestroyBlock(int x, int y, int z);
     void abortDestroyBlock(int x, int y, int z);
 
 private:

@@ -491,9 +491,9 @@ void PlayerConnection::handlePlayerAction(shared_ptr<PlayerActionPacket> packet)
 	}
 	else if (packet->action == PlayerActionPacket::STOP_DESTROY_BLOCK)
 	{
-		player->gameMode->stopDestroyBlock(x, y, z);
+		bool destroyed = player->gameMode->stopDestroyBlock(x, y, z);
 		server->getPlayers()->prioritiseTileChanges(x, y, z, level->dimension->id);	// 4J added - make sure that the update packets for this get prioritised over other general world updates
-		if (level->getTile(x, y, z) != 0) player->connection->send(std::make_shared<TileUpdatePacket>(x, y, z, level));
+		if (!destroyed && level->getTile(x, y, z) != 0) player->connection->send(std::make_shared<TileUpdatePacket>(x, y, z, level));
 	}
 	else if (packet->action == PlayerActionPacket::ABORT_DESTROY_BLOCK)
 	{

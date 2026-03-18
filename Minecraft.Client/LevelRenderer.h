@@ -83,6 +83,7 @@ private:
 	void resortChunks(int xc, int yc, int zc);
 public:
 	int render(shared_ptr<LivingEntity> player, int layer, double alpha, bool updateChunks);
+	void renderChunksDirect(int layer, double alpha);
 private:
 	int renderChunks(int from, int to, int layer, double alpha);
 public:
@@ -269,6 +270,12 @@ public:
 #endif
 
 	XLockFreeStack<int> dirtyChunksLockFreeStack;
+
+	// Visible chunk lists built by cull(), consumed by renderChunks()
+	int *visibleLists_layer0;
+	int *visibleLists_layer1;
+	int visibleCount_layer0;
+	int visibleCount_layer1;
 
 	bool				dirtyChunkPresent;
 	int64_t				lastDirtyChunkFound;

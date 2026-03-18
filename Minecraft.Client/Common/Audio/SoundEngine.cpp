@@ -468,65 +468,69 @@ void SoundEngine::play(int iSound, float x, float y, float z, float volume, floa
     sprintf_s(basePath, "Windows64Media/Sound/%s", (char*)szSoundName);
 
     char finalPath[256];
-    sprintf_s(finalPath, "%s.wav", basePath);
 
-	const char* extensions[] = { ".ogg", ".wav", ".mp3" };
-	size_t extCount = sizeof(extensions) / sizeof(extensions[0]);
-	bool found = false;
-
-	for (size_t extIdx = 0; extIdx < extCount; extIdx++)
+	// Check path cache first to avoid expensive filesystem probing
+	auto cacheIt = m_soundPathCache.find(iSound);
+	if (cacheIt != m_soundPathCache.end())
 	{
-		char basePlusExt[256];
-		sprintf_s(basePlusExt, "%s%s", basePath, extensions[extIdx]);
-		
-		DWORD attr = GetFileAttributesA(basePlusExt);
-		if (attr != INVALID_FILE_ATTRIBUTES && !(attr & FILE_ATTRIBUTE_DIRECTORY))
-		{
-			sprintf_s(finalPath, "%s", basePlusExt);
-			found = true;
-			break;
-		}
+		const auto& paths = cacheIt->second;
+		if (paths.empty())
+			return; // previously probed, no files found
+		const std::string& chosen = paths[rand() % paths.size()];
+		sprintf_s(finalPath, "%s", chosen.c_str());
 	}
-
-	if (!found)
+	else
 	{
-		int count = 0;
+		// Cache miss — probe filesystem and store results
+		std::vector<std::string> validPaths;
+		const char* extensions[] = { ".ogg", ".wav", ".mp3" };
+		size_t extCount = sizeof(extensions) / sizeof(extensions[0]);
+		bool found = false;
 
+		// Check base name with each extension (non-numbered)
 		for (size_t extIdx = 0; extIdx < extCount; extIdx++)
 		{
-			for (size_t i = 1; i < 32; i++)
+			char basePlusExt[256];
+			sprintf_s(basePlusExt, "%s%s", basePath, extensions[extIdx]);
+
+			DWORD attr = GetFileAttributesA(basePlusExt);
+			if (attr != INVALID_FILE_ATTRIBUTES && !(attr & FILE_ATTRIBUTE_DIRECTORY))
 			{
-				char numberedPath[256];
-				sprintf_s(numberedPath, "%s%d%s", basePath, i, extensions[extIdx]);
-				
-				DWORD attr = GetFileAttributesA(numberedPath);
-				if (attr != INVALID_FILE_ATTRIBUTES && !(attr & FILE_ATTRIBUTE_DIRECTORY))
+				validPaths.push_back(basePlusExt);
+				found = true;
+				break; // non-numbered: only one base file needed
+			}
+		}
+
+		if (!found)
+		{
+			// Check numbered variants (e.g. sound1.ogg, sound2.ogg, ...)
+			for (size_t extIdx = 0; extIdx < extCount; extIdx++)
+			{
+				for (int i = 1; i < 32; i++)
 				{
-					count = i;
+					char numberedPath[256];
+					sprintf_s(numberedPath, "%s%d%s", basePath, i, extensions[extIdx]);
+
+					DWORD attr = GetFileAttributesA(numberedPath);
+					if (attr != INVALID_FILE_ATTRIBUTES && !(attr & FILE_ATTRIBUTE_DIRECTORY))
+					{
+						validPaths.push_back(numberedPath);
+					}
 				}
 			}
 		}
 
-		if (count > 0)
+		m_soundPathCache[iSound] = validPaths;
+
+		if (validPaths.empty())
 		{
-			int chosen = (rand() % count) + 1;
-			for (size_t extIdx = 0; extIdx < extCount; extIdx++)
-			{
-				char numberedPath[256];
-				sprintf_s(numberedPath, "%s%d%s", basePath, chosen, extensions[extIdx]);
-				
-				DWORD attr = GetFileAttributesA(numberedPath);
-				if (attr != INVALID_FILE_ATTRIBUTES && !(attr & FILE_ATTRIBUTE_DIRECTORY))
-				{
-					sprintf_s(finalPath, "%s", numberedPath);
-					found = true;
-					break;
-				}
-			}
-			if (!found)
-			{
-				sprintf_s(finalPath, "%s%d.wav", basePath, chosen);
-			}
+			sprintf_s(finalPath, "%s.wav", basePath); // fallback for debug print
+		}
+		else
+		{
+			const std::string& chosen = validPaths[rand() % validPaths.size()];
+			sprintf_s(finalPath, "%s", chosen.c_str());
 		}
 	}
 
@@ -546,7 +550,7 @@ void SoundEngine::play(int iSound, float x, float y, float z, float volume, floa
     if (ma_sound_init_from_file(
             &m_engine,
             finalPath,
-            MA_SOUND_FLAG_ASYNC,
+            MA_SOUND_FLAG_DECODE | MA_SOUND_FLAG_ASYNC,
             nullptr,
             nullptr,
             &s->sound) != MA_SUCCESS)
@@ -602,24 +606,40 @@ void SoundEngine::playUI(int iSound, float volume, float pitch)
     sprintf_s(basePath, "Windows64Media/Sound/Minecraft/UI/%s", ConvertSoundPathToName(name));
 
     char finalPath[256];
-    sprintf_s(finalPath, "%s.wav", basePath);
 
-	const char* extensions[] = { ".ogg", ".wav", ".mp3" };
-	size_t count = sizeof(extensions) / sizeof(extensions[0]);
-	bool found = false;
-	for (size_t i = 0; i < count; i++)
+	// Check UI sound path cache first
+	auto cacheIt = m_uiSoundPathCache.find(iSound);
+	if (cacheIt != m_uiSoundPathCache.end())
 	{
-		sprintf_s(finalPath, "%s%s", basePath, extensions[i]);
-		if (FileExists(finalPath))
+		if (cacheIt->second.empty())
 		{
-			found = true;
-			break;
+			app.DebugPrintf("No sound file found for UI sound (cached): %s\n", basePath);
+			return;
 		}
+		sprintf_s(finalPath, "%s", cacheIt->second.c_str());
 	}
-	if (!found)
+	else
 	{
-		app.DebugPrintf("No sound file found for UI sound: %s\n", basePath);
-		return;
+		// Cache miss — probe filesystem and store result
+		const char* extensions[] = { ".ogg", ".wav", ".mp3" };
+		size_t count = sizeof(extensions) / sizeof(extensions[0]);
+		bool found = false;
+		for (size_t i = 0; i < count; i++)
+		{
+			sprintf_s(finalPath, "%s%s", basePath, extensions[i]);
+			if (FileExists(finalPath))
+			{
+				found = true;
+				break;
+			}
+		}
+		if (!found)
+		{
+			m_uiSoundPathCache[iSound] = ""; // cache negative result
+			app.DebugPrintf("No sound file found for UI sound: %s\n", basePath);
+			return;
+		}
+		m_uiSoundPathCache[iSound] = finalPath;
 	}
 
     MiniAudioSound* s = new MiniAudioSound();
@@ -633,7 +653,7 @@ void SoundEngine::playUI(int iSound, float volume, float pitch)
     if (ma_sound_init_from_file(
             &m_engine,
             finalPath,
-            MA_SOUND_FLAG_ASYNC,
+            MA_SOUND_FLAG_DECODE | MA_SOUND_FLAG_ASYNC,
             nullptr,
             nullptr,
             &s->sound) != MA_SUCCESS)

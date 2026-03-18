@@ -1545,7 +1545,7 @@ void GameRenderer::renderLevel(float a, int64_t until)
 			if (visibleWaterChunks > 0)
 			{
 				PIXBeginNamedEvent(0,"Fancy second pass - actual rendering");
-				levelRenderer->render(cameraEntity, 1, a, updateChunks);	// 4J - chanaged, used to be renderSameAsLast but we don't support that anymore
+				levelRenderer->renderChunksDirect(1, a);	// Lightweight path — skips redundant allChanged/resortChunks checks
 				PIXEndNamedEvent();
 			}
 

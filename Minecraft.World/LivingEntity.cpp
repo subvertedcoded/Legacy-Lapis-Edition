@@ -1380,16 +1380,12 @@ void LivingEntity::jumpFromGround()
 
 void LivingEntity::travel(float xa, float ya)
 {
-#ifdef __PSVITA__
-	// AP - dynamic_pointer_cast is a non-trivial call
+	// AP - dynamic_pointer_cast is a non-trivial call, use raw pointer instead
 	Player *thisPlayer = nullptr;
-	if( this->instanceof(eTYPE_PLAYER) )
+	if (this->instanceof(eTYPE_PLAYER))
 	{
 		thisPlayer = (Player*) this;
 	}
-#else
-	shared_ptr<Player> thisPlayer = dynamic_pointer_cast<Player>(shared_from_this());
-#endif
 	if (isInWater() && !(thisPlayer && thisPlayer->abilities.flying) )
 	{
 		double yo = y;
@@ -1424,13 +1420,14 @@ void LivingEntity::travel(float xa, float ya)
 	else
 	{
 		float friction = 0.91f;
+		int frictionTile = 0;
 		if (onGround)
 		{
+			frictionTile = level->getTile(Mth::floor(x), Mth::floor(bb->y0) - 1, Mth::floor(z));
 			friction = 0.6f * 0.91f;
-			int t = level->getTile(Mth::floor(x), Mth::floor(bb->y0) - 1, Mth::floor(z));
-			if (t > 0)
+			if (frictionTile > 0)
 			{
-				friction = Tile::tiles[t]->friction * 0.91f;
+				friction = Tile::tiles[frictionTile]->friction * 0.91f;
 			}
 		}
 
@@ -1452,10 +1449,9 @@ void LivingEntity::travel(float xa, float ya)
 		if (onGround)
 		{
 			friction = 0.6f * 0.91f;
-			int t = level->getTile( Mth::floor(x), Mth::floor(bb->y0) - 1, Mth::floor(z));
-			if (t > 0)
+			if (frictionTile > 0)
 			{
-				friction = Tile::tiles[t]->friction * 0.91f;
+				friction = Tile::tiles[frictionTile]->friction * 0.91f;
 			}
 		}
 		if (onLadder())

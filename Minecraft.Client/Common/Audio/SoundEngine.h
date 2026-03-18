@@ -5,6 +5,8 @@ using namespace std;
 #include "..\..\Minecraft.World\SoundTypes.h"
 
 #include "miniaudio.h"
+#include <unordered_map>
+#include <string>
 
 constexpr float SFX_3D_MIN_DISTANCE = 1.0f;
 constexpr float SFX_3D_MAX_DISTANCE = 16.0f;
@@ -186,6 +188,9 @@ private:
 	int m_iStream_End_Min,m_iStream_End_Max;
 	int m_iStream_CD_1;
 	bool *m_bHeardTrackA;
+
+	std::unordered_map<int, std::vector<std::string>> m_soundPathCache;   // play(): sound ID → all valid variant paths
+	std::unordered_map<int, std::string> m_uiSoundPathCache;              // playUI(): sound ID → resolved path
 
 #ifdef __ORBIS__
 	int32_t m_hBGMAudio;

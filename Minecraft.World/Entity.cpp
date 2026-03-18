@@ -705,6 +705,8 @@ void Entity::move(double xa, double ya, double za, bool noEntityCubes)   // 4J -
 		return;
 	}
 
+	auto self = shared_from_this();
+
 	ySlideOffset *= 0.4f;
 
 	double xo = x;
@@ -734,21 +736,21 @@ void Entity::move(double xa, double ya, double za, bool noEntityCubes)   // 4J -
 	if (isPlayerSneaking)
 	{
 		double d = 0.05;
-		while (xa != 0 && level->getCubes(shared_from_this(), bb->cloneMove(xa, -1.0, 0))->empty())
+		while (xa != 0 && level->getCubes(self, bb->cloneMove(xa, -1.0, 0), true)->empty())
 		{
 			if (xa < d && xa >= -d) xa = 0;
 			else if (xa > 0) xa -= d;
 			else xa += d;
 			xaOrg = xa;
 		}
-		while (za != 0 && level->getCubes(shared_from_this(), bb->cloneMove(0, -1.0, za))->empty())
+		while (za != 0 && level->getCubes(self, bb->cloneMove(0, -1.0, za), true)->empty())
 		{
 			if (za < d && za >= -d) za = 0;
 			else if (za > 0) za -= d;
 			else za += d;
 			zaOrg = za;
 		}
-		while (xa != 0 && za != 0 && level->getCubes(shared_from_this(), bb->cloneMove(xa, -1.0, za))->empty())
+		while (xa != 0 && za != 0 && level->getCubes(self, bb->cloneMove(xa, -1.0, za), true)->empty())
 		{
 			if (xa < d && xa >= -d) xa = 0;
 			else if (xa > 0) xa -= d;
@@ -761,7 +763,7 @@ void Entity::move(double xa, double ya, double za, bool noEntityCubes)   // 4J -
 		}
 	}
 
-	AABBList *aABBs = level->getCubes(shared_from_this(), bb->expand(xa, ya, za), noEntityCubes, true);
+	AABBList *aABBs = level->getCubes(self, bb->expand(xa, ya, za), noEntityCubes, true);
 
 
 	// 4J Stu - Particles (and possibly other entities) don't have xChunk and zChunk set, so calculate the chunk instead
@@ -816,7 +818,7 @@ void Entity::move(double xa, double ya, double za, bool noEntityCubes)   // 4J -
 		bb->set(bbOrg);
 		// 4J - added extra expand, as if we don't move up by footSize by hitting a block above us, then overall we could be trying to move as much as footSize downwards,
 		// so we'd better include cubes under our feet in this list of things we might possibly collide with
-		aABBs = level->getCubes(shared_from_this(), bb->expand(xa, ya, za)->expand(0,-ya,0),false,true);
+		aABBs = level->getCubes(self, bb->expand(xa, ya, za)->expand(0,-ya,0),false,true);
 
 		if(!level->isClientSide || level->reallyHasChunk(xc, zc))
 		{
@@ -926,7 +928,7 @@ void Entity::move(double xa, double ya, double za, bool noEntityCubes)   // 4J -
 				playSound(eSoundType_LIQUID_SWIM, speed, 1 + (random->nextFloat() - random->nextFloat()) * 0.4f);
 			}
 			playStepSound(xt, yt, zt, t);
-			Tile::tiles[t]->stepOn(level, xt, yt, zt, shared_from_this());
+			Tile::tiles[t]->stepOn(level, xt, yt, zt, self);
 		}
 	}
 
@@ -969,6 +971,7 @@ void Entity::checkInsideTiles()
 
 	if (level->hasChunksAt(x0, y0, z0, x1, y1, z1))
 	{
+		auto self = shared_from_this();
 		for (int x = x0; x <= x1; x++)
 			for (int y = y0; y <= y1; y++)
 				for (int z = z0; z <= z1; z++)
@@ -976,7 +979,7 @@ void Entity::checkInsideTiles()
 					int t = level->getTile(x, y, z);
 					if (t > 0)
 					{
-						Tile::tiles[t]->entityInside(level, x, y, z, shared_from_this());
+						Tile::tiles[t]->entityInside(level, x, y, z, self);
 					}
 				}
 	}
