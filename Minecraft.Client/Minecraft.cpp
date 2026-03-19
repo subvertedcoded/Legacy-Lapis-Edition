@@ -3828,7 +3828,10 @@ void Minecraft::tick(bool bFirst, bool bUpdateTextures)
 		if((player->ullButtonsPressed&(1LL<<MINECRAFT_ACTION_INVENTORY)) && gameMode->isInputAllowed(MINECRAFT_ACTION_INVENTORY))
 		{
 			shared_ptr<MultiplayerLocalPlayer> player = Minecraft::GetInstance()->player;
-			ui.PlayUISFX(eSFX_Press);
+			if (!player->isRiding())
+			{
+				ui.PlayUISFX(eSFX_Press);
+			}
 
 			if(gameMode->isServerControlledInventory())
 			{
