@@ -465,10 +465,15 @@ void Font::draw(const wstring &str, bool dropShadow, int initialColor)
 		if (isUnicodeGlyphChar(c))
 		{
 			t->end();
+			// renderUnicodeCharacter uses its own begin/end and relies on glColor
+			glColor4f((currentColor >> 16 & 255) / 255.0F, (currentColor >> 8 & 255) / 255.0F,
+				(currentColor & 255) / 255.0F, (currentColor >> 24 & 255) / 255.0F);
 			renderUnicodeCharacter(c);
+			glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			textures->bindTexture(m_textureLocation);
 			lastBoundTexture = fontTexture;
 			t->begin();
+			t->color(currentColor & 0x00ffffff, (currentColor >> 24) & 255);
 		}
 		else
 		{
