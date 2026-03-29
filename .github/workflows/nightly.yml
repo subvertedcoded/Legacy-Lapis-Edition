@@ -192,14 +192,18 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: gh api repos/${{ github.repository }}/git/refs/tags/Nightly-Dedicated-Server --method DELETE || true
 
+    - name: Import GPG key
+      uses: crazy-max/ghaction-import-gpg@v6
+      with:
+        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+        passphrase: ${{ secrets.GPG_PASSPHRASE }}
+        git_user_signingkey: true
+        git_tag_gpgsign: true
+
     - name: Create signed tag
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh api repos/${{ github.repository }}/git/refs \
-          --method POST \
-          --field ref="refs/tags/Nightly-Dedicated-Server" \
-          --field sha="${{ github.sha }}"
+        git tag -s -f Nightly -m "Nightly release ${{ steps.sha.outputs.short }}"
+        git push origin Nightly --force
 
     - name: Create release
       env:
@@ -248,14 +252,18 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: gh api repos/${{ github.repository }}/git/refs/tags/Nightly --method DELETE || true
 
+    - name: Import GPG key
+      uses: crazy-max/ghaction-import-gpg@v6
+      with:
+        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+        passphrase: ${{ secrets.GPG_PASSPHRASE }}
+        git_user_signingkey: true
+        git_tag_gpgsign: true
+
     - name: Create signed tag
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh api repos/${{ github.repository }}/git/refs \
-          --method POST \
-          --field ref="refs/tags/Nightly" \
-          --field sha="${{ github.sha }}"
+        git tag -s -f Nightly -m "Nightly release ${{ steps.sha.outputs.short }}"
+        git push origin Nightly --force
 
     - name: Write release notes
       run: |
