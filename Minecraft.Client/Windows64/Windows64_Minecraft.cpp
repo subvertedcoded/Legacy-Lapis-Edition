@@ -49,6 +49,7 @@
 #include "Network\WinsockNetLayer.h"
 #include "Windows64_Xuid.h"
 #include "Common/UI/UI.h"
+#include "stb_image_write.h"
 
 // Forward-declare the internal Renderer class and its global instance from 4J_Render_PC_d.lib.
 // C4JRender (RenderManager) is a stateless wrapper — all D3D state lives in InternalRenderManager.
@@ -473,6 +474,77 @@ bool                    g_bVSync = false;
 static bool             g_bTearingSupported = false;
 static bool             g_bPendingExclusiveFullscreen = false;
 static bool             g_bPendingExclusiveFullscreenValue = false;
+
+// Captures the D3D11 back buffer and saves it as a PNG screenshot.
+// Returns true on success and sets outFilename to the saved filename.
+static bool TakeScreenshot(wstring& outFilename)
+{
+	if (!g_pSwapChain || !g_pd3dDevice || !g_pImmediateContext)
+		return false;
+
+	ID3D11Texture2D* pBackBuffer = nullptr;
+	HRESULT hr = g_pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
+	if (FAILED(hr))
+		return false;
+
+	D3D11_TEXTURE2D_DESC desc;
+	pBackBuffer->GetDesc(&desc);
+	desc.Usage = D3D11_USAGE_STAGING;
+	desc.BindFlags = 0;
+	desc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
+	desc.MiscFlags = 0;
+
+	bool success = false;
+	ID3D11Texture2D* pStaging = nullptr;
+	hr = g_pd3dDevice->CreateTexture2D(&desc, nullptr, &pStaging);
+	if (SUCCEEDED(hr))
+	{
+		g_pImmediateContext->CopyResource(pStaging, pBackBuffer);
+
+		wchar_t exePath[MAX_PATH];
+		GetModuleFileNameW(NULL, exePath, MAX_PATH);
+		wchar_t* lastSlash = wcsrchr(exePath, L'\\');
+		if (lastSlash) *(lastSlash + 1) = L'\0';
+		wstring screenshotDirPath = wstring(exePath) + L"screenshots";
+		CreateDirectoryW(screenshotDirPath.c_str(), NULL);
+
+		SYSTEMTIME st;
+		GetLocalTime(&st);
+		wchar_t filename[128];
+		swprintf_s(filename, L"%04d-%02d-%02d_%02d.%02d.%02d.png",
+			st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
+		wstring screenshotPath = screenshotDirPath + L"\\" + filename;
+
+		D3D11_MAPPED_SUBRESOURCE mapped;
+		hr = g_pImmediateContext->Map(pStaging, 0, D3D11_MAP_READ, 0, &mapped);
+		if (SUCCEEDED(hr))
+		{
+			unsigned char* rgba = new unsigned char[desc.Width * desc.Height * 4];
+			for (UINT row = 0; row < desc.Height; row++)
+			{
+				unsigned char* src = (unsigned char*)mapped.pData + row * mapped.RowPitch;
+				unsigned char* dst = rgba + row * desc.Width * 4;
+				memcpy(dst, src, desc.Width * 4);
+				for (UINT x = 0; x < desc.Width; x++)
+					dst[x * 4 + 3] = 0xFF;
+			}
+			g_pImmediateContext->Unmap(pStaging, 0);
+
+			string narrowPath(screenshotPath.begin(), screenshotPath.end());
+			int writeResult = stbi_write_png(narrowPath.c_str(), desc.Width, desc.Height, 4, rgba, desc.Width * 4);
+			delete[] rgba;
+
+			if (writeResult)
+			{
+				outFilename = filename;
+				success = true;
+			}
+		}
+		pStaging->Release();
+	}
+	pBackBuffer->Release();
+	return success;
+}
 
 // COM proxy for IDXGISwapChain — delegates all calls to the real swap chain,
 // but overrides Present() to set SyncInterval=1 when VSync is enabled.
@@ -1854,6 +1926,20 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 			else if (shouldCapture && !g_KBMInput.IsMouseGrabbed() && GetFocus() == g_hWnd && !altToggleSuppressCapture)
 			{
 				g_KBMInput.SetMouseGrabbed(true);
+			}
+		}
+
+		// F2 takes a screenshot (works in any context)
+		if (g_KBMInput.IsKeyPressed(KeyboardMouseInput::KEY_SCREENSHOT))
+		{
+			wstring filename;
+			if (TakeScreenshot(filename))
+			{
+				if (pMinecraft->gui && pMinecraft->player)
+				{
+					wstring msg = L"Saved screenshot to " + filename;
+					pMinecraft->gui->addMessage(msg, ProfileManager.GetPrimaryPad());
+				}
 			}
 		}
 

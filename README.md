@@ -148,9 +148,10 @@ Dedicated server releases support Hardcore Mode!
 - Dedicated Server (`LCREServerWindows64.zip`): download from the Nightly-Dedicated-Server release on GitHub
 - Docker: pull `ghcr.io/itsrevela/minecraft-lce-dedicated-server:nightly` for server container
 
-In-game screenshot functionality with F2!
+Screenshot functionality with F2!
 - pressing F2 will save a screenshot to a `screenshots` folder in your root game directory
-- a local-only chat message is shown to the player notifying the screenshot filename that was saved
+- works in any context: main menu, pause menu, settings, inventory, crafting, and during gameplay
+- a local-only chat message is shown to the player when in-game
 
 Proper implementation of Hardcore Mode in LCRE!
 - difficulty slider included in create world menu
