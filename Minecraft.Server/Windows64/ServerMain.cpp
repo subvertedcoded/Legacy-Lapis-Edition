@@ -33,6 +33,7 @@
 #include "../../Minecraft.World/OldChunkStorage.h"
 #include "../../Minecraft.World/BiomeSource.h"
 #include "../../Minecraft.World/LevelType.h"
+#include "../../Minecraft.World/ConsoleSaveFileOriginal.h"
 #include "../../Minecraft.World/net.minecraft.world.level.tile.h"
 #include "../../Minecraft.World/Random.h"
 
@@ -330,6 +331,7 @@ static void TickCoreSystems()
 	g_NetworkManager.DoWork();
 	ProfileManager.Tick();
 	StorageManager.Tick();
+    ConsoleSaveFileOriginal::flushPendingBackgroundSave();
 }
 
 /**
@@ -763,7 +765,18 @@ int main(int argc, char **argv)
 	{
 		C4JThread waitThread(&WaitForServerStoppedThreadProc, NULL, "WaitServerStopped");
 		waitThread.Run();
+		while (waitThread.isRunning())
+		{
+			TickCoreSystems();
+			Sleep(10);
+		}
 		waitThread.WaitForCompletion(INFINITE);
+	}
+
+	while (ConsoleSaveFileOriginal::hasPendingBackgroundSave())
+	{
+		TickCoreSystems();
+		Sleep(10);
 	}
 
 	LogInfof("shutdown", "Cleaning up and exiting.");
