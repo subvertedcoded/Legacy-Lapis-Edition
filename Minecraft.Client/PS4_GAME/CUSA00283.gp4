@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<psproject fmt="gp4" version="1000">
+  <volume>
+    <volume_type>pkg_ps4_app</volume_type>
+    <volume_id>PS4VOLUME</volume_id>
+    <volume_ts>2026-04-09 00:00:00</volume_ts>
+    <package content_id="JP0127-CUSA00283_00-MINECRAFTPS40000" passcode="00000000000000000000000000000000" storage_type="digital50" app_type="full"/>
+    <chunk_info chunk_count="1" scenario_count="1">
+      <chunks>
+        <chunk id="0" layer_no="0" label="Chunk #0"/>
+      </chunks>
+      <scenarios default_id="0">
+        <scenario id="0" type="sp" initial_chunk_count="1" label="Scenario #0">0</scenario>
+      </scenarios>
+    </chunk_info>
+  </volume>
+  <files img_no="0">
+    <file targ_path="sce_sys/icon0.png"/>
+    <file targ_path="sce_sys/keymap_rp/00/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/01/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/02/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/03/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/04/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/05/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/06/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/07/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/08/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/09/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/10/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/11/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/12/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/13/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/14/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/15/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/16/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/17/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/18/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/19/001.png"/>
+    <file targ_path="sce_sys/keymap_rp/20/001.png"/>
+    <file targ_path="sce_sys/nptitle.dat"/>
+    <file targ_path="sce_sys/param.sfo"/>
+    <file targ_path="sce_sys/pic0.png"/>
+    <file targ_path="sce_sys/pic1.png"/>
+    <file targ_path="sce_sys/pronunciation.sig"/>
+    <file targ_path="sce_sys/pronunciation.xml"/>
+    <file targ_path="sce_sys/snd0.at9"/>
+    <file targ_path="sce_sys/trophy/trophy00.trp"/>
+    <file targ_path="sce_sys/trophy/trophy_Bronz.png"/>
+    <file targ_path="sce_sys/trophy/trophy_Gold.png"/>
+    <file targ_path="sce_sys/trophy/trophy_Group.png"/>
+    <file targ_path="sce_sys/trophy/trophy_Silver.png"/>
+    <file targ_path="sce_module/libc.prx"/>
+    <file targ_path="sce_module/libSceFios2.prx"/>
+    <file targ_path="eboot.bin"/>
+    <file targ_path="Common/Media/font/CHT/DFTT_R5.TTC" pfs_compression="enable"/>
+    <file targ_path="Common/Media/font/JPN/DF-DotDotGothic16.ttf" pfs_compression="enable"/>
+    <file targ_path="Common/Media/font/KOR/candadite2.ttf" pfs_compression="enable"/>
+    <file targ_path="Common/Media/font/Mojangles.ttf" pfs_compression="enable"/>
+    <file targ_path="Common/Media/font/RU/SpaceMace.ttf" pfs_compression="enable"/>
+    <file targ_path="Common/Media/MediaOrbis.arc" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/achievement/bg.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/achievement/icons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/chain_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/chain_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/cloth_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/cloth_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/diamond_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/diamond_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/gold_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/gold_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/iron_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/iron_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/armor/power.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/art/kz.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/environment/clouds.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/environment/light_normal.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/environment/rain.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/environment/snow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/font/alternate.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/font/default.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/alchemy.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/allitems.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/background.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/container.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/crafting.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/crash_logo.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/enchant.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/furnace.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/gui.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/icons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/inventory.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/items.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/particles.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/slot.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/trap.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/gui/unknown_pack.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/arrows.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/boat.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/book.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/cart.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/chest.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/door.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/largechest.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/sign.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/item/xporb.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/dial.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/explosion.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/foliagecolor.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/footprint.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/glint.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/grasscolor.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/mapbg.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/mapicons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/particlefield.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/pumpkinblur.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/shadow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/tunnel.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/vignette.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/water.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/misc/watercolor.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/cat_black.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/cat_red.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/cat_siamese.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/cavespider.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/char.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/chicken.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/cow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/creeper.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderdragon/beam.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderdragon/body.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderdragon/crystal.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderdragon/dragon.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderdragon/ender.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderdragon/ender_eyes.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderdragon/shuffle.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderman.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/enderman_eyes.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/fire.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/ghast.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/ghast_fire.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/lava.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/ozelot.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/pig.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/pigman.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/pigzombie.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/redcow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/saddle.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/sheep.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/sheep_fur.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/silverfish.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/skeleton.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/slime.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/snowman.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/spider.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/spider_eyes.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/squid.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager/butcher.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager/farmer.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager/librarian.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager/priest.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager/smith.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager/villager.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/villager_golem.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/wolf.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/wolf_angry.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/wolf_tame.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/mob/zombie.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/pack.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/pack.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/particles.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/terrain/moon.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/terrain/moon_phases.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/terrain/sun.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/1_2_2/terrain.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/achievement/bg.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/achievement/icons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/chain_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/chain_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/cloth_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/cloth_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/diamond_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/diamond_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/gold_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/gold_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/iron_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/iron_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/armor/power.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/art/kz.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/environment/clouds.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/environment/rain.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/environment/snow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/font/default.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/font/Mojangles_11.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/font/Mojangles_7.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/background.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/container.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/crafting.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/furnace.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/gui.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/icons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/inventory.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/items.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/logo.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/particles.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/slot.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/trap.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/gui/unknown_pack.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/item/arrows.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/item/boat.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/item/cart.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/item/door.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/item/sign.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/dial.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/foliagecolor.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/footprint.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/grasscolor.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/mapbg.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/mapicons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/pumpkinblur.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/shadow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/vignette.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/water.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/misc/watercolor.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char3.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char4.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char5.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char6.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/char7.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/chicken.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/cow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/creeper.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/ghast.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/ghast_fire.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/pig.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/pigman.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/pigzombie.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/saddle.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/sheep.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/sheep_fur.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/skeleton.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/slime.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/spider.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/spider_eyes.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/squid.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/wolf.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/wolf_angry.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/wolf_tame.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/mob/zombie.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/pack.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/particles.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/terrain/moon.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/terrain/sun.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/terrain.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/GameRules/Tutorial_Orbis.pck" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/armor/cloth_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/armor/cloth_1_b.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/armor/cloth_2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/armor/cloth_2_b.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/armor/power.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/art/kz.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/colours.col" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/font/Default.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/font/Mojangles_11.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/font/Mojangles_7.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/item/book.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/item/enderchest.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/items.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/misc/additionalmapicons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/misc/explosion.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/misc/footprint.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/misc/glint.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/misc/mapicons.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/misc/particlefield.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/misc/tunnel.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/enderdragon/beam.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/enderdragon/ender.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/enderdragon/ender_eyes.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/enderman_eyes.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/redcow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/skeleton_wither.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/snowman.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/villager/butcher.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/villager/farmer.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/villager/librarian.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/villager/priest.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/villager/smith.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/villager/villager.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/wolf_collar.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/wolf_tame.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/zombie.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/mob/zombie_villager.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/particles.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/terrain.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/terrainMipMapLevel2.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/terrainMipMapLevel3.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/fire_0.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/fire_0.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/fire_1.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/fire_1.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/lava.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/lava.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/lava_flow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/lava_flow.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/portal.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/portal.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/water.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/water.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/water_flow.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/blocks/water_flow.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/items/clock.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/items/clock.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/items/compass.png" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/res/textures/items/compass.txt" pfs_compression="enable"/>
+    <file targ_path="Common/res/TitleUpdate/tutorialDiff" pfs_compression="enable"/>
+    <file targ_path="CUSA00283.gp4" pfs_compression="enable"/>
+    <file targ_path="music/cds/11.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/13.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/blocks.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/cat.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/chirp.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/far.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/mall.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/mellohi.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/stal.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/strad.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/ward.binka" pfs_compression="enable"/>
+    <file targ_path="music/cds/where_are_we_now.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/calm1.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/calm2.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/calm3.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/creative1.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/creative2.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/creative3.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/creative4.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/creative5.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/creative6.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/hal1.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/hal2.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/hal3.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/hal4.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/menu1.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/menu2.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/menu3.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/menu4.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/nether1.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/nether2.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/nether3.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/nether4.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/nuance1.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/nuance2.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/piano1.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/piano2.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/piano3.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/the_end_dragon_alive.binka" pfs_compression="enable"/>
+    <file targ_path="music/music/the_end_end.binka" pfs_compression="enable"/>
+    <file targ_path="Orbis/PS4ProductCodes.bin" pfs_compression="enable"/>
+    <file targ_path="Orbis/session_image.jpg" pfs_compression="enable"/>
+    <file targ_path="sce_gls/standby_screen/standby_screen_resource.bsf" pfs_compression="enable"/>
+    <file targ_path="sce_gls/standby_screen/standby_screen_resource_high.bsf" pfs_compression="enable"/>
+    <file targ_path="sce_gls/standby_screen/standby_screen_resource_low.bsf" pfs_compression="enable"/>
+    <file targ_path="Sound/Minecraft.msscmp" pfs_compression="enable"/>
+  </files>
+  <rootdir>
+    <dir targ_name="Common">
+      <dir targ_name="Media">
+        <dir targ_name="font">
+          <dir targ_name="CHT"/>
+          <dir targ_name="JPN"/>
+          <dir targ_name="KOR"/>
+          <dir targ_name="RU"/>
+        </dir>
+      </dir>
+      <dir targ_name="res">
+        <dir targ_name="1_2_2">
+          <dir targ_name="achievement"/>
+          <dir targ_name="armor"/>
+          <dir targ_name="art"/>
+          <dir targ_name="environment"/>
+          <dir targ_name="font"/>
+          <dir targ_name="gui"/>
+          <dir targ_name="item"/>
+          <dir targ_name="misc"/>
+          <dir targ_name="mob">
+            <dir targ_name="enderdragon"/>
+            <dir targ_name="villager"/>
+          </dir>
+          <dir targ_name="terrain"/>
+        </dir>
+        <dir targ_name="TitleUpdate">
+          <dir targ_name="GameRules"/>
+          <dir targ_name="res">
+            <dir targ_name="armor"/>
+            <dir targ_name="art"/>
+            <dir targ_name="font"/>
+            <dir targ_name="item"/>
+            <dir targ_name="misc"/>
+            <dir targ_name="mob">
+              <dir targ_name="enderdragon"/>
+              <dir targ_name="villager"/>
+            </dir>
+            <dir targ_name="textures">
+              <dir targ_name="blocks"/>
+              <dir targ_name="items"/>
+            </dir>
+          </dir>
+        </dir>
+        <dir targ_name="achievement"/>
+        <dir targ_name="armor"/>
+        <dir targ_name="art"/>
+        <dir targ_name="environment"/>
+        <dir targ_name="font"/>
+        <dir targ_name="gui"/>
+        <dir targ_name="item"/>
+        <dir targ_name="misc"/>
+        <dir targ_name="mob"/>
+        <dir targ_name="terrain"/>
+      </dir>
+    </dir>
+    <dir targ_name="Orbis"/>
+    <dir targ_name="Sound"/>
+    <dir targ_name="music">
+      <dir targ_name="cds"/>
+      <dir targ_name="music"/>
+    </dir>
+    <dir targ_name="sce_gls">
+      <dir targ_name="standby_screen"/>
+    </dir>
+    <dir targ_name="sce_module"/>
+    <dir targ_name="sce_sys">
+      <dir targ_name="keymap_rp">
+        <dir targ_name="00"/>
+        <dir targ_name="01"/>
+        <dir targ_name="02"/>
+        <dir targ_name="03"/>
+        <dir targ_name="04"/>
+        <dir targ_name="05"/>
+        <dir targ_name="06"/>
+        <dir targ_name="07"/>
+        <dir targ_name="08"/>
+        <dir targ_name="09"/>
+        <dir targ_name="10"/>
+        <dir targ_name="11"/>
+        <dir targ_name="12"/>
+        <dir targ_name="13"/>
+        <dir targ_name="14"/>
+        <dir targ_name="15"/>
+        <dir targ_name="16"/>
+        <dir targ_name="17"/>
+        <dir targ_name="18"/>
+        <dir targ_name="19"/>
+        <dir targ_name="20"/>
+      </dir>
+      <dir targ_name="trophy"/>
+    </dir>
+  </rootdir>
+</psproject>
