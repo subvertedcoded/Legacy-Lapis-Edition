@@ -3,6 +3,8 @@
 
 Was able to build the fpkg and run it on my slim 12.00. This is a good place to start :)
 
+Please also note, at this time this is practically just the base unmodifed jp version of LCE at least at the writing of this readme. I'll probably look at hooking up the networking stuff revelations has or something
+
 # Info
 ~~No idea if any of this will be possible. I do not know jackshit about the OpenOrbis toolchain, the normal sony sdk for that matter, and I'm still very clueless regarding what I should look at for getting this to work as a PS4 homebrew app, but hopefully it'll work out :)~~
 
