@@ -29,4 +29,4 @@ I will not be providing fpkgss in the repository, and so you will be required to
 
 
 # Contact
-Uhhhh I mean feel free to ping me in the [LCE hub discord server](https://discord.gg/eemHDKS78n) I guess. My username is realsubvert. 
+Uhhhh I mean feel free to ping me in the [LCE hub discord server](https://discord.gg/eemHDKS78n) I guess. My username is realsubvert.  
