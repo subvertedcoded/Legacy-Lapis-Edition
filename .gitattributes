@@ -1,3 +1,0 @@
-.github/workflows/docker-nightly.yml merge=ours
-.github/workflows/nightly.yml merge=ours
-docker-compose.dedicated-server.ghcr.yml merge=ours
