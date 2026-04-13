@@ -10,9 +10,18 @@ Please also note, at this time this is practically just the base unmodifed jp ve
 
 After some tinkering, successfully building a fpkg, and properly installing and running said fpkg onto my 12.00 PS4, I think I can confidentally say that this project is possible with the files we have. Originally, I was planning on migrating to the OpenOrbis toolchain if neccissary, however aside from slightly tinkering with the provided param.sfo and creating a gp4 file for the file structure, the codebase is probably capable of being used as a base for porting features such as direct connect to servers to LCE dedicated servers and maybe future releases. 
 
-# Original Codebase Info
+# Interesting Notes
 
-At least from what I was able to gather from files such as the param.sfo, the original codebase was made for the jp release of LCE for version 1.00 (not 100% sure if it was actually 1.00). Some information seemed a bit off, such as the content id in the param.sfo file stating JP0127-CUSA00283_00-MINECRAFTPS00000 when it should be JP0127-CUSA00283_00-MINECRAFTPS40000. 
+- At least from what I was able to gather from files such as the param.sfo, the original codebase was made for the jp release of LCE for version 1.00 (not 100% sure if it was actually 1.00). Some information seemed a bit off, such as the content id in the param.sfo file stating JP0127-CUSA00283_00-MINECRAFTPS00000 when it should be JP0127-CUSA00283_00-MINECRAFTPS40000.
+- There is a txt file named earlyplayers.txt that contains a large ass list of what I assume to be a bunch of players. This is not the first time this list has been seen and from what I could find, was first mentioned in this [minecraftforum thread](https://www.minecraftforum.net/forums/minecraft-java-edition/discussion/159689-earlyplayers-txt) from 2011 which I think was kind of neat.
+- There is a file named "Network Implementation Notes.txt" which contains an architecture diagram of the networkmanager interaction using text which I think is kind of neat. Guess they didnt have visual paradigm back then, lucky them. Might be somewhat useful for my own purposes. Also has a reference to a file named extra64.h but I could not find any information regarding that file
+
+# Sanity Guide (to be updated)
+
+Useful notes, resulting from a lot of pain
+
+- You can find the stupid files that contains all the game's textures at ~/Minecraft.Client/PS4_GAME/Common/res/TitleUpdate/res/terrain.png (Big thanks to hikkysikky)
+- The actual file the game that contains the string information regarding the games credits is located at ~//Minecraft.Client/Common/UI/UIScene_Credits.cpp
 
 # How can I build and Run this???
 I will not be providing fpkgss in the repository, and so you will be required to manually build the fpkg yourself after cloneing the source code.
