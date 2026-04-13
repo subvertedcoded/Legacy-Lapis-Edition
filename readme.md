@@ -21,11 +21,13 @@ I will not be providing fpkgss in the repository, and so you will be required to
 
 2. Go to the [CyB1k's Fake PKG tools](https://github.com/CyB1K/PS4-Fake-PKG-Tools-3.87/releases) repository to the release section and download and place the .rar file into another folder seperate from the one in step 1. For reference, I'm using the latest version of making of this readme which is 7.00.
 
-3. In the fpkg tools, open gengp4_app.exe, select the ./Minecraft.Client/PS4_Game directory and generate and save the GP4 file.
+3. In the fpkg tools, open gengp4_app.exe, select the ./Minecraft.Client/PS4_Game directory and generate and save the GP4 file preferably in a place where you can easily access it.
 
-4. Close the gp4 creation tool and open the orbis-pub-gen.exe tool. Click file, open, and select the gp4 file from step 3 (or the premade one in ./Minecraft.Client/PS4_Game directory). Click the build button, select the location, and let it build.
+4. Close the gp4 creation tool and open the newly made GP4 file (a notepad editor should work), find the line stating <scenarios default_id="1"> and change the value to <scenarios default_id="0"> and save.
 
-5. Take your newly created fpkg and install it onto your homebrewd PS4. The game requires a minimum firmware of 4.50.
+5. Open the orbis-pub-gen.exe tool. Click file, open, and select the gp4 file from step 3 (or the premade one in ./Minecraft.Client/PS4_Game directory). Click the build button, select the location, and let it build.
+
+6. Take your newly created fpkg and install it onto your homebrewd PS4. The game requires a minimum firmware of 4.50.
 
 
 # Contact
